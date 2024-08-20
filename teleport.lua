@@ -47,6 +47,9 @@ local spell_radius = 2.5;
 local spell_max_range = 10.0;
 
 local next_time_allowed_cast = 0.0;
+        local current_time = get_time_since_inject();
+        next_time_allowed_cast = current_time + 0.5;
+
 local function logics(entity_list, target_selector_data, best_target)
  
     local menu_boolean = menu_elements_sorc_base.main_boolean:get();
