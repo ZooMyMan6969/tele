@@ -53,14 +53,14 @@ local function logics(entity_list, target_selector_data, best_target)
 
     -- Check if the toggle was just turned on
     if menu_boolean and not was_toggle_on then
-        next_time_allowed_cast = current_time;
+        next_time_allowed_cast = current_time + 0.4; -- Set to future time when toggle is turned on
         was_toggle_on = true;
     elseif not menu_boolean then
         was_toggle_on = false;
     end
 
-    -- Update next_time_allowed_cast
-    next_time_allowed_cast = math.max(next_time_allowed_cast, current_time + 0.01);
+    -- Remove this line as it's no longer needed
+    -- next_time_allowed_cast = math.max(next_time_allowed_cast, current_time + 0.01);
 
     local is_logic_allowed = my_utility.is_spell_allowed(
                 menu_boolean, 
